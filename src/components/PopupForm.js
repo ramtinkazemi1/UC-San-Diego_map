@@ -6,10 +6,10 @@ const PopupForm = ({ location, onClose, position }) => {
   const [urgencyLevel, setUrgencyLevel] = useState('');
   const [sendTo, setSendTo] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [dragging, setDragging] = useState(false);
-  const [rel, setRel] = useState({ x: 0, y: 0 });
-  const [popupPosition, setPopupPosition] = useState(position);
-  const ref = useRef(null);
+  // const [dragging, setDragging] = useState(false);
+  // const [rel, setRel] = useState({ x: 0, y: 0 });
+  // const [popupPosition, setPopupPosition] = useState(position);
+  // const ref = useRef(null);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -58,54 +58,54 @@ const PopupForm = ({ location, onClose, position }) => {
     }
   };
 
-  const onMouseDown = (e) => {
-    if (e.button !== 0) return;
-    setDragging(true);
-    setRel({
-      x: e.pageX - popupPosition.x,
-      y: e.pageY - popupPosition.y,
-    });
-    e.stopPropagation();
-    e.preventDefault();
-  };
+  // const onMouseDown = (e) => {
+  //   if (e.button !== 0) return;
+  //   setDragging(true);
+  //   setRel({
+  //     x: e.pageX - popupPosition.x,
+  //     y: e.pageY - popupPosition.y,
+  //   });
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // };
 
-  const onMouseUp = (e) => {
-    setDragging(false);
-    e.stopPropagation();
-    e.preventDefault();
-  };
+  // const onMouseUp = (e) => {
+  //   setDragging(false);
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // };
 
-  const onMouseMove = (e) => {
-    if (!dragging) return;
-    setPopupPosition({
-      x: e.pageX - rel.x,
-      y: e.pageY - rel.y,
-    });
-    e.stopPropagation();
-    e.preventDefault();
-  };
+  // const onMouseMove = (e) => {
+  //   if (!dragging) return;
+  //   setPopupPosition({
+  //     x: e.pageX - rel.x,
+  //     y: e.pageY - rel.y,
+  //   });
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  // };
 
-  useEffect(() => {
-    const onMouseMoveListener = (e) => onMouseMove(e);
-    const onMouseUpListener = (e) => onMouseUp(e);
+  // useEffect(() => {
+  //   const onMouseMoveListener = (e) => onMouseMove(e);
+  //   const onMouseUpListener = (e) => onMouseUp(e);
 
-    if (dragging) {
-      document.addEventListener('mousemove', onMouseMoveListener);
-      document.addEventListener('mouseup', onMouseUpListener);
-    }
+  //   if (dragging) {
+  //     document.addEventListener('mousemove', onMouseMoveListener);
+  //     document.addEventListener('mouseup', onMouseUpListener);
+  //   }
 
-    return () => {
-      document.removeEventListener('mousemove', onMouseMoveListener);
-      document.removeEventListener('mouseup', onMouseUpListener);
-    };
-  }, [dragging]);
+  //   return () => {
+  //     document.removeEventListener('mousemove', onMouseMoveListener);
+  //     document.removeEventListener('mouseup', onMouseUpListener);
+  //   };
+  // }, [dragging]);
 
 
 
   return (
     <div 
-      ref={ref}
-      onMouseDown={onMouseDown}
+      // ref={ref}
+      // onMouseDown={onMouseDown}
       className="popup" 
       style={{
         backgroundColor: '#e3f2fd',
@@ -116,10 +116,10 @@ const PopupForm = ({ location, onClose, position }) => {
         maxHeight: "500px",
         position: 'fixed',
         zIndex: 1,
-        // top: `${position.y}px`,
-        // left: `${position.x}px`,
-        top: `${popupPosition.y}px`,
-        left: `${popupPosition.x}px`,
+        top: `${position.y}px`,
+        left: `${position.x}px`,
+        // top: `${popupPosition.y}px`,
+        // left: `${popupPosition.x}px`,
         transform: 'translate(-50%, calc(-100% - 40px))',
         textAlign: 'center',
       }}
