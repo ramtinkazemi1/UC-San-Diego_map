@@ -126,8 +126,8 @@ const PopupForm = ({ location, onClose, position }) => {
     >
       {!submitted ? (
         <div>
-          <button 
-            onClick={onClose} 
+          <button
+            onClick={onClose}
             style={{
               position: 'absolute',
               top: '5px',

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './App.css';
 
 import member1Image from './myloc.jpg';
@@ -13,6 +14,11 @@ import Map from './components/Map.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
+  //sets the browser's tab name
+  useEffect(() => {
+    document.title = 'AAA';
+  }, []);
+
   return (
     <div className="App">
     <nav className="navbar">
