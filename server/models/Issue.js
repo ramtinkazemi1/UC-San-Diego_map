@@ -1,15 +1,22 @@
-const mongoose = require('mongoose');
+// issue.js
+const Sequelize = require('sequelize');
+const sequelize = require('./server/database.js');
 
-const IssueSchema = new mongoose.Schema({
-  issueType: String,
-  description: String,
-  urgencyLevel: String, // changed this to String to match your frontend form
-  sendTo: String,
-  location: {
-    latitude: Number,
-    longitude: Number,
-  },
-  createdAt: { type: Date, default: Date.now },
+const Issue = sequelize.define('issue', {
+  issueType: Sequelize.STRING,
+  description: Sequelize.STRING,
+  urgencyLevel: Sequelize.STRING,
+  sendTo: Sequelize.STRING,
+  latitude: Sequelize.DOUBLE,
+  longitude: Sequelize.DOUBLE
+}, {
+  timestamps: true,
+  createdAt: 'created_at',
+  updatedAt: false
 });
 
-module.exports = mongoose.model('Issue', IssueSchema);
+sequelize.sync()
+  .then(() => console.log('Issues table has been successfully created, if one does not exist'))
+  .catch(error => console.log('This error occurred', error));
+
+module.exports = Issue;

@@ -11,6 +11,7 @@ function Map() {
   const [showPopup, setShowPopup] = useState(false);
   const [location, setLocation] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleFlyTo = () => {
     if (navigator.geolocation) {
@@ -69,23 +70,25 @@ function Map() {
 
       newMap.on('click', (e) => {
         const { lng, lat } = e.lngLat;
-
+      
         if (currentMarker) {
           currentMarker.remove();
         }
-
+      
         currentMarker = new mapboxgl.Marker({draggable: true })
           .setLngLat([lng, lat])
           .addTo(newMap);
-
+      
         setMarker(currentMarker);
         setShowPopup(true);
+        setSubmitted(false); // Make sure this line is added to reset the submitted state
         setLocation({ lat, lng });
-
+      
         // Calculate pixel position of marker
         const popupPosition = newMap.project([lng, lat]);
         setPopupPosition(popupPosition);
       });
+      
     }
   }, [mapContainer]);
 
