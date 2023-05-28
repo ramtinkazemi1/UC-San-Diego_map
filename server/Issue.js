@@ -1,6 +1,5 @@
-// issue.js
 const Sequelize = require('sequelize');
-const sequelize = require('./server/database.js');
+const sequelize = require('./database.js');
 
 const Issue = sequelize.define('issue', {
   issueType: Sequelize.STRING,
@@ -11,12 +10,8 @@ const Issue = sequelize.define('issue', {
   longitude: Sequelize.DOUBLE
 }, {
   timestamps: true,
-  createdAt: 'created_at',
+  createdAt: 'createdAt',
   updatedAt: false
 });
-
-sequelize.sync()
-  .then(() => console.log('Issues table has been successfully created, if one does not exist'))
-  .catch(error => console.log('This error occurred', error));
 
 module.exports = Issue;
