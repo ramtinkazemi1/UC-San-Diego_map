@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './App.css';
-
-import member1Image from './myloc.jpg';
+import fallenStar from './fallen_star.jpg';
+import ramtinImage from './ramtin.jpg';
 import member2Image from './myloc.jpg';
 import member3Image from './myloc.jpg';
 import member4Image from './myloc.jpg';
@@ -43,14 +43,16 @@ function App() {
         </Link>
       </section>
 
-      <section id="about" style={{ backgroundColor: '#007BFF', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+      <section id="about" style={{ backgroundImage: `url(${fallenStar})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
         <div style={{ maxWidth: '60%', textAlign: 'center', background: 'rgba(255, 255, 255, 0.1)', padding: '50px', borderRadius: '10px' }}>
-          <h2>About Our Map</h2>
-          <p>
+          <h2 style={{color: '#ecca4d' , fontSize: '2em'}}>About Our Map</h2>
+          <h3 style={{color: '#ecca4d',fontSize: '1.5em'}}>
             Our map is a revolutionary tool for visualizing geospatial data. It provides users with an intuitive interface to interact and report issues, making the experience engaging and user-friendly. The map leverages the power of Mapbox, resulting in superior performance and reliability. Along with the map, a responsive form allows users to report location-based issues directly on the map. Join us in our quest to make geospatial data more accessible and useful.
-          </p>
+          </h3>
         </div>
       </section>
+
+
 
       <section id="map" style={{ width:'100%', margin: '0 auto', height: '100vh' }}>
         <Map style={{ width: '80%', margin: '0 auto' }} />
@@ -61,8 +63,9 @@ function App() {
         <h1>Our Team</h1>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
           <div style={{ margin: '20px', textAlign: 'center' }}>
-            <img src={member1Image} alt="Member 1" style={{ width: '150px', height: '150px', borderRadius: '50%' }}/>
-            <p>Description for member 1</p>
+            <img src={ramtinImage} alt="Member 1" style={{ width: '150px', height: '150px', borderRadius: '50%' }}/>
+            <h2>Ramtin Kazemi</h2>
+              <p>Software Engineer</p>
           </div>
           <div style={{ margin: '20px', textAlign: 'center' }}>
             <img src={member2Image} alt="Member 2" style={{ width: '150px', height: '150px', borderRadius: '50%' }}/>
