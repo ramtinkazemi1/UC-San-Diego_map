@@ -1,8 +1,11 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import PopupForm from './PopupForm';
+import 'mapbox-gl/dist/mapbox-gl.css';
+//mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+mapboxgl.accessToken = 'pk.eyJ1IjoicmFtdGlua2F6ZW1pIiwiYSI6ImNsaTJlaDNsazA0MHIzbXMxOXJnaHF1dHYifQ.odM1dPQsnSwxTa0tk5V6Rg';
 
 function Map() {
   const mapContainer = useRef(null);

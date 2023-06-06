@@ -13,6 +13,7 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import Map from './components/Map.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+
 function App() {
   //sets the browser's tab name
   useEffect(() => {
