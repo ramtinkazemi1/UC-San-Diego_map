@@ -73,25 +73,25 @@ function Map() {
 
       newMap.on('click', (e) => {
         const { lng, lat } = e.lngLat;
-      
+
         if (currentMarker) {
           currentMarker.remove();
         }
-      
+
         currentMarker = new mapboxgl.Marker({draggable: true })
           .setLngLat([lng, lat])
           .addTo(newMap);
-      
+
         setMarker(currentMarker);
         setShowPopup(true);
-        setSubmitted(false); // Make sure this line is added to reset the submitted state
+        setSubmitted(false); // to reset the submitted state
         setLocation({ lat, lng });
-      
+
         // Calculate pixel position of marker
         const popupPosition = newMap.project([lng, lat]);
         setPopupPosition(popupPosition);
       });
-      
+
     }
   }, [mapContainer]);
 

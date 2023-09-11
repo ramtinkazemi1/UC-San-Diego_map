@@ -1,14 +1,16 @@
 // server.js
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const Issue = require('./Issue');
 const sequelize = require('./database');
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(express.json()); // Updated this line
+app.use(cors({
+  origin: ['https://ramtinmapbox.netlify.app', 'http://localhost:3000'],
+  optionsSuccessStatus: 200,
+}));
 
 sequelize.sync()
   .then(() => console.log('Issues table has been successfully created, if one does not exist'))
@@ -20,7 +22,7 @@ app.post('/issues', async (req, res) => {
   const { issueType, description, urgencyLevel, sendTo, location } = req.body;
 
   try {
-    // Create new issue
+
     const issue = await Issue.create({
       issueType,
       description,

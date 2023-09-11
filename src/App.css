@@ -112,3 +112,15 @@ section {
   height: auto;
   border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+  section#about div {
+    flex-direction: column;
+    text-align: center;
+  }
+  section#about div > div {
+    flex: 1;
+    width: 100%;
+    background-image: none; /* Remove the background image on smaller screens */
+  }
+}
