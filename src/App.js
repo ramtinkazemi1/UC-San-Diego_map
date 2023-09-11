@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import './App.css';
 import fallenStar from './fallen_star.jpg';
 import ramtinImage from './ramtin.jpg';
-import member2Image from './myloc.jpg';
+
 
 
 import React from 'react';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import Map from './components/Map.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 

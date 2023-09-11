@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const PopupForm = ({ location, onClose, position }) => {
   const [issueType, setIssueType] = useState('');

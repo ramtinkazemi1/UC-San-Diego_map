@@ -14,7 +14,7 @@ function Map() {
   const [showPopup, setShowPopup] = useState(false);
   const [location, setLocation] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
-  const [submitted, setSubmitted] = useState(false);
+  const [, setSubmitted] = useState(false);
 
   const handleFlyTo = () => {
     if (navigator.geolocation) {
