@@ -43,12 +43,26 @@ function App() {
         </Link>
       </section>
 
+<<<<<<< Updated upstream
       <section id="about" style={{ backgroundColor: '#007BFF', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
         <div style={{ maxWidth: '60%', textAlign: 'center', background: 'rgba(255, 255, 255, 0.1)', padding: '50px', borderRadius: '10px' }}>
           <h2>About Our Map</h2>
           <p>
             Our map is a revolutionary tool for visualizing geospatial data. It provides users with an intuitive interface to interact and report issues, making the experience engaging and user-friendly. The map leverages the power of Mapbox, resulting in superior performance and reliability. Along with the map, a responsive form allows users to report location-based issues directly on the map. Join us in our quest to make geospatial data more accessible and useful.
           </p>
+=======
+      <section id="about" style={{ backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+        <div style={{ maxWidth: '60%', textAlign: 'left', background: 'rgba(255, 255, 255, 0.1)', padding: '50px', borderRadius: '10px', display: 'flex' }}>
+          <div style={{ flex: '1', backgroundImage: `url(${fallenStar})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          </div>
+          <div style={{ flex: '1', padding: '0px', maxWidth: '100%' }}>
+          <h2 style={{ color: '#ecca4d', fontSize: '200%', textAlign: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>About This Map</h2>
+
+            <h3 style={{ color: '#ecca4d', fontSize: '1.4em', textAlign: 'left' }}>
+              This map is a revolutionary tool for visualizing geospatial data. It provides users with an intuitive interface to interact and report issues, making the experience engaging and user-friendly. The map leverages the power of Mapbox, resulting in superior performance and reliability. Along with the map, a responsive form allows users to report location-based issues directly on the map.
+            </h3>
+          </div>
+>>>>>>> Stashed changes
         </div>
       </section>
 
