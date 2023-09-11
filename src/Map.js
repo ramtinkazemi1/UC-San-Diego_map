@@ -1,9 +1,11 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import PopupForm from './PopupForm';
-
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
-
+//mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+mapboxgl.accessToken = 'pk.eyJ1IjoicmFtdGlua2F6ZW1pIiwiYSI6ImNsaTJlaDNsazA0MHIzbXMxOXJnaHF1dHYifQ.odM1dPQsnSwxTa0tk5V6Rg';
+//no build
 function Map() {
   const mapContainer = useRef(null);
   const [map, setMap] = useState(null);
@@ -11,7 +13,7 @@ function Map() {
   const [showPopup, setShowPopup] = useState(false);
   const [location, setLocation] = useState(null);
   const [popupPosition, setPopupPosition] = useState({ x: 0, y: 0 });
-  const [submitted, setSubmitted] = useState(false);
+  const [, setSubmitted] = useState(false);
 
   const handleFlyTo = () => {
     if (navigator.geolocation) {
@@ -70,25 +72,25 @@ function Map() {
 
       newMap.on('click', (e) => {
         const { lng, lat } = e.lngLat;
-      
+
         if (currentMarker) {
           currentMarker.remove();
         }
-      
+
         currentMarker = new mapboxgl.Marker({draggable: true })
           .setLngLat([lng, lat])
           .addTo(newMap);
-      
+
         setMarker(currentMarker);
         setShowPopup(true);
-        setSubmitted(false); // Make sure this line is added to reset the submitted state
+        setSubmitted(false); // to reset the submitted state
         setLocation({ lat, lng });
-      
+
         // Calculate pixel position of marker
         const popupPosition = newMap.project([lng, lat]);
         setPopupPosition(popupPosition);
       });
-      
+
     }
   }, [mapContainer]);
 

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const PopupForm = ({ location, onClose, position }) => {
   const [issueType, setIssueType] = useState('');
@@ -56,8 +56,7 @@ const PopupForm = ({ location, onClose, position }) => {
 
   return (
     <div>
-      <div
-        className="popup"
+      <div className="popup"
         style={{
           backgroundColor: '#e3f2fd',
           padding: '20px',
@@ -69,7 +68,8 @@ const PopupForm = ({ location, onClose, position }) => {
           zIndex: 1,
           top: `${position.y - 20 }px`,
           left: `${position.x}px`,
-          transform: 'translate(-50%, calc(-100% - 40px))',
+          //transform: 'translate(-50%, calc(-100% - 40px))',
+          transform: 'translate(-50%, calc(-100% - 20px))',
           textAlign: 'center',
         }}
       >
