@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from '!mapbox-gl';
 import PopupForm from './PopupForm';
 import 'mapbox-gl/dist/mapbox-gl.css';
 //mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
