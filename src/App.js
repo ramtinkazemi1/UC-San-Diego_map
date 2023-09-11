@@ -3,8 +3,6 @@ import './App.css';
 import fallenStar from './fallen_star.jpg';
 import ramtinImage from './ramtin.jpg';
 
-
-
 import React from 'react';
 import { Link } from "react-scroll";
 import Map from './Map.js';
@@ -27,7 +25,8 @@ function App() {
   </nav>
 
       <section id="home" style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', backgroundImage: 'url(YOUR_BACKGROUND_IMAGE_URL)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <h1 style={{ fontSize: '4em', color: '#fff', textAlign: 'center' }}>Welcome to <span style={{ color: '#0d3b66' }}>UCSD</span> Mapbox</h1>
+      <h1 style={{ fontSize: '4em', color: '#fff', textAlign: 'center', whiteSpace: 'pre-line' }}>
+      Welcome to <span style={{ color: '#0d3b66' }}>UCSD</span> Mapbox</h1>
         <p style={{ fontSize: '1.5em', maxWidth: '60%', textAlign: 'center', color: '#fff' }}>An innovative platform for visualizing and reporting geospatial data. Discover, interact and learn from our interactive map.</p>
         <Link
           to="map"
@@ -45,9 +44,10 @@ function App() {
         <div style={{ maxWidth: '60%', textAlign: 'left', background: 'rgba(255, 255, 255, 0.1)', padding: '50px', borderRadius: '10px', display: 'flex' }}>
           <div style={{ flex: '1', backgroundImage: `url(${fallenStar})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           </div>
-          <div style={{ flex: '1', padding: '20px' }}>
-            <h2 style={{ color: '#ecca4d', fontSize: '2em', textAlign: 'center' }}>About This Map</h2>
-            <h3 style={{ color: '#ecca4d', fontSize: '1.5em', textAlign: 'left' }}>
+          <div style={{ flex: '1', padding: '5%', maxWidth: '100%' }}>
+          <h2 style={{ color: '#ecca4d', fontSize: '200%', textAlign: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>About This Map</h2>
+
+            <h3 style={{ color: '#ecca4d', fontSize: '1.4em', textAlign: 'left' }}>
               This map is a revolutionary tool for visualizing geospatial data. It provides users with an intuitive interface to interact and report issues, making the experience engaging and user-friendly. The map leverages the power of Mapbox, resulting in superior performance and reliability. Along with the map, a responsive form allows users to report location-based issues directly on the map.
             </h3>
           </div>
