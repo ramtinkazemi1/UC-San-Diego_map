@@ -7,7 +7,7 @@ import ramtinImage from './ramtin.jpg';
 
 import React from 'react';
 import { Link } from "react-scroll";
-import Map from './components/Map.js';
+import Map from './Map.js';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 
